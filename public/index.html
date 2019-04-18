@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet">
+    <script
+  src="https://code.jquery.com/jquery-3.4.0.js"
+  integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+  crossorigin="anonymous"></script>
+    <title>IMS</title>
+    <script>
+        $(function(){
+          $('#go-btn').click(function(){
+            animate('#Block','fadeOutLeft');
+            
+            animate('#Block-hidden','fadeInRight');
+           
+            return false;
+          });
+         
+
+          function animate(element,animation){
+            $(element).addClass('animated '+animation);
+            var wait= setTimeout(function(){
+              $(element).removeClass('animated'+animation);
+              $('#Block').css("display","none");
+              $('#Block-hidden').css("display","block");
+              $('.Button').css("justify-content","space-between");
+            },800)
+          }
+         
+        });
+        $(function(){
+            $('#back-btn').click(function(){
+            animateBack('#Block-hidden','fadeOutRight');
+            
+            animateBack('#Block','fadeInLeft');
+          });
+            return false;
+            function animateBack(element,animation){
+            $(element).addClass('animated '+animation);
+            var wait= setTimeout(function(){
+              $(element).removeClass('animated'+animation);
+              $('#Block-hidden').css("display","none");
+              $('#Block').css("display","inline");
+              $('.Button').css("justify-content","flex-end");
+            },800)
+          }
+          });
+
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    
+  </body>
+</html>
