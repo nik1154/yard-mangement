@@ -33,9 +33,7 @@
         $(function(){
           $('#go-btn').click(function(){
             animate('#Block','fadeOutLeft');
-            
             animate('#Block-hidden','fadeInRight');
-           
             return false;
           });
          
@@ -43,10 +41,12 @@
           function animate(element,animation){
             $(element).addClass('animated '+animation);
             var wait= setTimeout(function(){
-              $(element).removeClass('animated'+animation);
-              $('#Block').css("display","none");
+              // $(element).removeClass('animated '+animation);
+              $(element).css("display","none");
               $('#Block-hidden').css("display","block");
               $('.Button').css("justify-content","space-between");
+              $('.App-logo').css("margin-bottom","0px");
+              $('#Block').removeClass('animated '+'fadeOutLeft').delay(1500);
             },800)
           }
          
@@ -61,10 +61,11 @@
             function animateBack(element,animation){
             $(element).addClass('animated '+animation);
             var wait= setTimeout(function(){
-              $(element).removeClass('animated'+animation);
               $('#Block-hidden').css("display","none");
-              $('#Block').css("display","inline");
+              $('#Block').css("display","block");
               $('.Button').css("justify-content","flex-end");
+              $('.App-logo').css("margin-bottom","47px");
+              $('#Block-hidden').removeClass('animated '+'fadeOutRight').delay(1500);
             },800)
           }
           });

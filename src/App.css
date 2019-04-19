@@ -9,6 +9,7 @@
   /* animation: App-logo-spin infinite 20s linear; */
   height: 30vmin;
   pointer-events: none;
+  margin-bottom: 47px;
 }
 
 .App-header {
@@ -44,10 +45,20 @@
   display: flex;
   justify-content: flex-end;
 }
+
+*:focus {outline-color: none !important}
+
+/* button,.btn:focus{outline: none !important; border: none !important;}
+button,.btn:active{outline: none !important; border: none !important;} */
+
 .btn-group,form{
   width: 100%;
+  outline: none;
+
 }
 .btn{
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
   padding: 0%;
   margin-bottom: 20px;
 }
@@ -64,12 +75,31 @@ p{
   display: flex;
   justify-content: center;
   font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  color: #e6e6e6;
+  font-weight: 400;
+  color: #8f8fa1;
 }
+.show{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-radius:20px;
+  border: none;
+}
+.dropdown-menu{
+  background-color: #e6e6e6;
+}
+.dropdown-item{
+  display: flex;
+  justify-content: flex-start;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700; 
+  padding: 4px 30px;
+  color: #8f8fa1;
+}
+
 @media only screen and (min-width: 1300px){
   .Block{
-    width: 35%;
+    width: 40%;
   }
 }
 @media only screen and (min-width: 900px) and (max-width: 1299px){
@@ -81,7 +111,13 @@ p{
   .Block{
     width: 70%;
   }
+}
+
+@media only screen and (max-width: 500px){
   .App-logo{
-    margin-bottom: 10%;
+    margin-bottom: 20%;
+  }
+  .Block{
+    padding-bottom: 2em;
   }
 }
