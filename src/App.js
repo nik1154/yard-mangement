@@ -13,11 +13,11 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <div className="Block" id="Block">
             <div className="Row1">
-              <Dropdown name="Company" width="100%"></Dropdown>
+              <Dropdown name="Company"></Dropdown>
             </div>
             <div className="Row2">
-              <Dropdown name="Department" width="100%"></Dropdown>
-              <Dropdown name="Division" width="100%"></Dropdown>
+              <Dropdown name="Department" ></Dropdown>
+              <Dropdown name="Division" ></Dropdown>
             </div>
             <div className="Button">
               {/* <Button name="Back" color="#8f8fa1"></Button> */}
